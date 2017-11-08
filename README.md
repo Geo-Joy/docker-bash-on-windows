@@ -1,4 +1,4 @@
-### Docker In Windows Bash
+### Docker In Windows Bash - Updated!!!
 
 Unfortunately, you can't run docker in Windows bash today. When you try to run docker in the bash subsystem you get an error like:
 
@@ -24,6 +24,9 @@ Sounds backwards, but it's true. How? Easy:
 1. Launch a [WSL bash window](https://msdn.microsoft.com/en-us/commandline/wsl/about)
 2. Follow installation steps for [Docker on Ubuntu](https://docs.docker.com/engine/installation/linux/ubuntu/#install-using-the-repository) - since Windows subsystem is based on Ubuntu
 3. Connect to the docker daemon using tcp instead of the linux socket or a windows pipe. Either add a -H pararmeter when you invoke docker
+4. From windows taskbar - open docker-settings
+5. Tick - Expose daemon on tcp... without TLS
+6. From bash - use any command below.
 
 ```
 $ docker -H tcp://localhost version
